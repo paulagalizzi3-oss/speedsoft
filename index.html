@@ -235,7 +235,7 @@ footer a:hover{text-decoration:underline}
     <a href="#como">Cómo instalar</a>
     <a href="#preguntas">Preguntas</a>
     <a href="#contacto">Contacto</a>
-    <a class="btn btn-accent app-link" href="#apps">Abrir Control de Turnos</a>
+    <a class="btn btn-accent app-link" href="https://control-de-turnos.onrender.com/?instalar=1">Instalar Control de Turnos</a>
   </nav>
 </header>
 
@@ -278,7 +278,7 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="step-grid">
         <div class="step"><b>01</b><div><h3>Elegí tu app</h3><p>Recorré el catálogo y entrá a la app que necesitás.</p></div></div>
-        <div class="step"><b>02</b><div><h3>Tocá “Instalar”</h3><p>En Android y PC aparece el botón de instalar. En iPhone: Compartir › Agregar a inicio.</p></div></div>
+        <div class="step"><b>02</b><div><h3>Tocá “Instalar”</h3><p>La app se abre con el aviso “Instalá la app”. En Android tocá Instalar; en iPhone, Compartir › Agregar a inicio.</p></div></div>
         <div class="step"><b>03</b><div><h3>Abrila cuando quieras</h3><p>Queda con su ícono en tu pantalla de inicio, lista para usar.</p></div></div>
       </div>
     </div>
@@ -304,9 +304,9 @@ footer a:hover{text-decoration:underline}
               <span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15150F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Avisá una falta y recuperá la clase en el mes</span>
               <span class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15150F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Acceso para alumnos y administración</span>
             </div>
-            <a class="btn btn-dark app-link" href="#apps">
+            <a class="btn btn-dark app-link" href="https://control-de-turnos.onrender.com/?instalar=1">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
-              Abrir Control de Turnos
+              Instalar Control de Turnos
             </a>
           </div>
           <div class="preview" aria-hidden="true">
@@ -356,9 +356,9 @@ footer a:hover{text-decoration:underline}
   <div class="cta-outer">
     <section class="cta">
       <h2 class="display">Encontrá la app que necesitás y empezá hoy.</h2>
-      <a class="btn btn-dark app-link" href="#apps">
+      <a class="btn btn-dark app-link" href="https://control-de-turnos.onrender.com/?instalar=1">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
-        Abrir Control de Turnos
+        Instalar Control de Turnos
       </a>
     </section>
   </div>
@@ -386,7 +386,9 @@ footer a:hover{text-decoration:underline}
   const APP_URL = 'https://control-de-turnos.onrender.com';
   // ============================================================
   if (APP_URL) {
-    document.querySelectorAll('.app-link').forEach(a => { a.href = APP_URL; });
+    // "?instalar=1" hace que la app se abra mostrando el aviso para instalarla.
+    const INSTALL_URL = APP_URL.replace(/\/+$/, '') + '/?instalar=1';
+    document.querySelectorAll('.app-link').forEach(a => { a.href = INSTALL_URL; });
   }
 
   // Menú en celular
